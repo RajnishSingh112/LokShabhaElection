@@ -1,0 +1,13 @@
+package com.election2019.repository;
+
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.election2019.model.User;
+
+public interface UserRepository extends JpaRepository<User,Integer> {
+   
+	Optional<User> findByEmailAndPassword(String email, String password);
+	
+}
